@@ -13,86 +13,87 @@
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div class="app">
+<div id="login" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">K</div>
+    <small>KICKBASE ASSISTANT</small>
+    <h1>Willkommen zurück.</h1>
+    <p>Verbinde deinen Kickbase-Account, um deine Liga analysieren zu können.</p>
+    <div class="secure"><b>🔐 Sicherheit zuerst</b><span>Deine Kickbase-Zugangsdaten werden von dieser Demo nicht gespeichert oder an unseren Server übertragen.</span></div>
+    <button class="primary full" id="connectKickbase">Kickbase öffnen</button>
+    <button class="secondary full" id="demoLogin">Demo-Modus starten</button>
+    <a class="help-link" href="https://www.kickbase.com/" target="_blank" rel="noopener">Kickbase öffnen ↗</a>
+    <small class="legal-note">Hinweis: Kickbase bietet aktuell keine offizielle Web-Version und wir haben hier keinen offiziellen Login-/API-Zugang. Deshalb gibt es bewusst kein Formular, das dein Kickbase-Passwort abfragt.</small>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
 <header>
-  <div class="brand"><span class="logo">K</span><div><b>KICKBASE</b><small>LEAGUE INTELLIGENCE</small></div></div>
-  <span class="pill">● DEMO · READ-ONLY</span>
+  <div class="brand"><span class="logo">K</span><div><b>KICKBASE</b><small>ASSISTANT · V9</small></div></div>
+  <div class="header-actions"><span class="connection"><i></i> DEMO</span><button id="logout" class="iconbtn" aria-label="Abmelden">↪</button></div>
 </header>
+
 <main>
-<section class="hero">
-  <div><small>LEAGUE INTELLIGENCE · V8</small>
-  <h1>Spiele nicht nur den<br><em>Markt. Spiele die Liga.</em></h1>
-  <p>Dein persönliches Transfer-Dashboard mit Fair Value, Liga-Impact und Risikoanalyse.</p></div>
-  <div class="orb">♛</div>
+<section id="home" class="view">
+  <section class="hero"><div><small>DEIN DASHBOARD</small><h1>Dein <em>Kickbase Coach.</em></h1><p>Alle wichtigen Signale kompakt auf einer Seite.</p></div><div class="orb">K</div></section>
+  <section class="leaguebar"><div><small>DEIN RANG</small><strong>#3</strong><span>↑ 1 Platz</span></div><div><small>BUDGET</small><strong>18,4 Mio.</strong><span>verfügbar</span></div><div><small>KADER</small><strong>15 / 20</strong><span>5 Plätze frei</span></div><div><small>ABSTAND #1</small><strong>−86</strong><span>Punkte</span></div></section>
+  <section class="grid">
+    <section class="panel"><div class="head"><div><small>TOP SIGNAL</small><h2>Spieler B</h2></div><span class="score-big">92</span></div><div class="signal greenbox"><b>KAUFEN</b><span>Fair Value 13,0 Mio. · Marktwert 12,0 Mio.</span><strong>Konfidenz 87 %</strong></div><button class="primary full nav-btn" data-view="market">Zum Markt →</button></section>
+    <section class="panel"><div class="head"><div><small>MODELLQUALITÄT</small><h2>Backtest</h2></div></div><div class="stats"><div><strong>73%</strong><small>Trefferquote</small></div><div><strong>+5,3%</strong><small>Ø Return</small></div><div><strong>87%</strong><small>Konfidenz</small></div></div></section>
+  </section>
 </section>
 
-<section class="leaguebar">
- <div><small>DEIN RANG</small><strong>#3</strong><span>↑ 1 Platz</span></div>
- <div><small>BUDGET</small><strong>18,4 Mio.</strong><span>verfügbar</span></div>
- <div><small>KADER</small><strong>15 / 20</strong><span>5 Plätze frei</span></div>
- <div><small>ABSTAND #1</small><strong>−86</strong><span>Punkte</span></div>
-</section>
+<section id="market" class="view hidden">
+<section class="hero"><div><small>TRANSFER RADAR</small><h1>Finde den <em>besten Deal.</em></h1><p>Fair Value, Kaufgrenze und strategischer Liga-Score.</p></div><div class="orb">↗</div></section>
+<section class="panel"><div class="head"><div><small>TOP CHANCEN</small><h2>Transfermarkt</h2></div><span class="badge">DEMO-DATEN</span></div>
+<div class="marketrow"><div><b>Spieler B</b><small>ST · 12,0 Mio.</small></div><span>Fair 13,0</span><strong>92</strong><button class="primary smallbtn">KAUFEN</button></div>
+<div class="marketrow"><div><b>Spieler A</b><small>MF · 8,6 Mio.</small></div><span>Fair 9,6</span><strong>91</strong><button class="primary smallbtn">KAUFEN</button></div>
+<div class="marketrow"><div><b>Spieler E</b><small>MF · 2,4 Mio.</small></div><span>Fair 3,1</span><strong>88</strong><button class="primary smallbtn">KAUFEN</button></div>
+<div class="marketrow"><div><b>Spieler F</b><small>ABW · 4,2 Mio.</small></div><span>Fair 4,9</span><strong>81</strong><button class="secondary smallbtn">BEOB.</button></div>
+</section></section>
 
-<section class="panel">
- <div class="head"><div><small>TOP-EMPFEHLUNG</small><h2>Transfer Radar</h2></div><span class="badge">MODELL V8</span></div>
- <div class="recommend best">
-  <div class="tag">#1</div>
-  <div class="person"><i>👨🏽</i><div><b>Spieler B</b><small>ST · Demo-Verein · 12,0 Mio.</small></div></div>
-  <div class="reason"><b>MAXIMALER LIGA-EFFEKT</b><p>13,1 erwartete Punkte. Kein Besitz bei den direkten Konkurrenten. Hoher Punktewert, aber Budget stark gebunden.</p></div>
-  <div class="score"><b>92</b><small>STRATEGIE</small></div><button>PRIORITÄT</button>
- </div>
- <div class="recommend">
-  <div class="tag">#2</div>
-  <div class="person"><i>🧑🏻</i><div><b>Spieler A</b><small>MF · Demo-Verein · 8,6 Mio.</small></div></div>
-  <div class="reason"><b>VALUE + UPSIDE</b><p>Fair Value 9,6 Mio. und attraktiver Kaufpreis. Konkurrent #1 besitzt ihn bereits.</p></div>
-  <div class="score"><b>84</b><small>STRATEGIE</small></div><button>KAUFEN</button>
- </div>
- <div class="recommend">
-  <div class="tag">#3</div>
-  <div class="person"><i>👨🏼</i><div><b>Spieler E</b><small>MF · Demo-Verein · 2,4 Mio.</small></div></div>
-  <div class="reason"><b>VALUE-PICK</b><p>Günstige Ergänzung mit 31 % Upside und guter Budgeteffizienz.</p></div>
-  <div class="score"><b>88</b><small>STRATEGIE</small></div><button>KAUFEN</button>
- </div>
-</section>
+<section id="players" class="view hidden">
+<section class="hero"><div><small>SPIELER ANALYSE</small><h1>Spieler <em>Scouting.</em></h1><p>Vergleiche Score, Fair Value und Konfidenz.</p></div><div class="orb">◎</div></section>
+<section class="panel"><div class="head"><div><small>RANKING</small><h2>Top Spieler</h2></div></div>
+<div class="player-card"><div class="avatar">👨🏽</div><div><b>Spieler B</b><small>ST · 13,1 erwartete Punkte</small></div><strong>92</strong><span class="green">Kaufen</span></div>
+<div class="player-card"><div class="avatar">🧑🏻</div><div><b>Spieler A</b><small>MF · 11,8 erwartete Punkte</small></div><strong>91</strong><span class="green">Kaufen</span></div>
+<div class="player-card"><div class="avatar">👨🏼</div><div><b>Spieler E</b><small>MF · 6,7 erwartete Punkte</small></div><strong>88</strong><span class="green">Kaufen</span></div>
+</section></section>
 
-<section class="grid">
-<section class="panel">
- <div class="head"><div><small>SPIELER-CHECK</small><h2>Fair Value Engine</h2></div><span class="big">91</span></div>
- <div class="factor"><span>Ø Punkte</span><b>94%</b><i><u style="width:94%"></u></i></div>
- <div class="factor"><span>Einsatzchance</span><b>96%</b><i><u style="width:96%"></u></i></div>
- <div class="factor"><span>Form</span><b>94%</b><i><u style="width:94%"></u></i></div>
- <div class="factor"><span>Markttrend</span><b>86%</b><i><u style="width:86%"></u></i></div>
- <div class="factor"><span>Spielplan</span><b>78%</b><i><u style="width:78%"></u></i></div>
- <div class="values"><div><small>FAIR VALUE</small><strong>9,6 Mio.</strong></div><div><small>KAUF BIS</small><strong>8,6 Mio.</strong></div></div>
-</section>
-<section class="panel">
- <div class="head"><div><small>BACKTEST</small><h2>Modellqualität</h2></div><span class="badge">DEMO</span></div>
- <div class="stats"><div><strong>73%</strong><small>Trefferquote</small></div><div><strong>+5,3%</strong><small>Ø Return</small></div><div><strong>87%</strong><small>Konfidenz</small></div></div>
- <div class="mini-chart"><svg viewBox="0 0 700 170" preserveAspectRatio="none"><path d="M0 145 C65 138 80 120 135 127 S205 95 255 105 S320 72 370 86 S440 48 500 61 S575 70 625 42 S675 30 700 18" fill="none" stroke="currentColor" stroke-width="4"/></svg></div>
-</section>
-</section>
+<section id="squad" class="view hidden">
+<section class="hero"><div><small>DEIN KADER</small><h1>Kader <em>Check.</em></h1><p>Demo-Ansicht deiner Kaderstruktur und Transfermöglichkeiten.</p></div><div class="orb">⚽</div></section>
+<section class="leaguebar"><div><small>KADERWERT</small><strong>84,2 Mio.</strong><span>+2,7 Mio. Potenzial</span></div><div><small>PLÄTZE</small><strong>15 / 20</strong><span>5 frei</span></div><div><small>BUDGET</small><strong>18,4 Mio.</strong><span>verfügbar</span></div><div><small>BEDARF</small><strong>MF</strong><span>höchste Priorität</span></div></section>
+<section class="panel"><div class="head"><div><small>TRANSFER-PLAN</small><h2>Empfohlene Aktion</h2></div></div><p class="note">Spieler B erhöht das Punktepotenzial. Spieler E ist die günstige Ergänzung.</p><button class="primary nav-btn" data-view="market">Transfer planen →</button></section></section>
 
-<section class="panel">
- <div class="head"><div><small>LIGA INTELLIGENCE</small><h2>Konkurrenten</h2></div></div>
- <div class="managers">
-  <div><span>#1</span><b>Konkurrent 1</b><small>Spieler A · Spieler B · Spieler M</small><em>7,2 Mio. Budget</em></div>
-  <div><span>#2</span><b>Konkurrent 2</b><small>Spieler C · Spieler D</small><em>11,1 Mio. Budget</em></div>
-  <div><span>#4</span><b>Konkurrent 4</b><small>Spieler E · Spieler F</small><em>14,0 Mio. Budget</em></div>
- </div>
-</section>
-
-<section class="panel scenario">
- <div class="head"><div><small>TRANSFER-SIMULATOR</small><h2>Was passiert mit deiner Liga?</h2></div></div>
- <div class="scenario-row">
-  <div><small>AKTUELL</small><b>86 Punkte</b><span>Rückstand auf #1</span></div><div class="arrow">→</div>
-  <div><small>MIT TRANSFER</small><b class="green">48 Punkte</b><span>simulierter Rückstand</span></div>
-  <div class="impact"><small>LIGA-IMPACT</small><b>+38</b><span>erwartete Punkte</span></div>
- </div>
-</section>
+<section id="league" class="view hidden">
+<section class="hero"><div><small>LEAGUE INTELLIGENCE</small><h1>Spiele die <em>Liga.</em></h1><p>Deine Konkurrenten und strategischen Transferziele.</p></div><div class="orb">♛</div></section>
+<section class="panel"><div class="head"><div><small>KONKURRENTEN</small><h2>Wer besitzt wen?</h2></div></div>
+<div class="managers"><div><span>#1</span><b>Konkurrent 1</b><small>Spieler A · Spieler B · Spieler M</small><em>7,2 Mio. Budget</em></div><div><span>#2</span><b>Konkurrent 2</b><small>Spieler C · Spieler D</small><em>11,1 Mio. Budget</em></div><div><span>#4</span><b>Konkurrent 4</b><small>Spieler E · Spieler F</small><em>14,0 Mio. Budget</em></div></div></section>
+<section class="panel"><div class="head"><div><small>LIGA-IMPACT</small><h2>Spieler B</h2></div><span class="score-big">92</span></div><p class="note">Starker strategischer Wert, weil kein direkter Konkurrent ihn besitzt.</p></section></section>
 </main>
-<nav><a class="active">♛<small>Liga</small></a><a>⌂<small>Home</small></a><a>↗<small>Markt</small></a><a>◎<small>Spieler</small></a><a>⚽<small>Kader</small></a></nav>
+
+<nav>
+<a data-view="league">♛<small>Liga</small></a><a data-view="home" class="active">⌂<small>Home</small></a><a data-view="market">↗<small>Markt</small></a><a data-view="players">◎<small>Spieler</small></a><a data-view="squad">⚽<small>Kader</small></a>
+</nav>
 </div>
 <script>
-if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+(function(){
+ const login=document.getElementById("login"),app=document.getElementById("app");
+ const connect=document.getElementById("connectKickbase"),demo=document.getElementById("demoLogin"),logout=document.getElementById("logout");
+ function enter(){login.classList.add("hidden");app.classList.remove("hidden");localStorage.setItem("kb_demo","1");show("home")}
+ function show(name){
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("hidden",v.id!==name));
+  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("active",a.dataset.view===name));
+  history.replaceState(null,"","#"+name);window.scrollTo({top:0,behavior:"smooth"});
+ }
+ document.querySelectorAll("[data-view]").forEach(el=>el.addEventListener("click",()=>show(el.dataset.view)));
+ demo.addEventListener("click",enter);
+ connect.addEventListener("click",()=>window.open("https://www.kickbase.com/","_blank","noopener"));
+ logout.addEventListener("click",()=>{localStorage.removeItem("kb_demo");app.classList.add("hidden");login.classList.remove("hidden")});
+ if(localStorage.getItem("kb_demo")==="1") enter();
+ else {login.classList.remove("hidden");app.classList.add("hidden")}
+ const h=location.hash.slice(1); if(h) setTimeout(()=>show(h),0);
+})();
 </script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").catch(()=>{});}</script>
 </body></html>
