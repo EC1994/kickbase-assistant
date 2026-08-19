@@ -1,10 +1,10 @@
 {
   "name": "Kickbase Assistant",
   "short_name": "KB Assistant",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#080a0e",
   "theme_color": "#080a0e",
-  "description": "Liga- und Transferanalyse-Dashboard"
+  "description": "Kickbase Liga- und Transferanalyse"
 }
